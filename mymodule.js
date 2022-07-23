@@ -9,3 +9,14 @@ module.exports = listFilteredFiles = (dirName, ext, callback) => {
 		callback(null, filteredFiles);
 	});
 }
+
+// same result as above, but using async/await
+/* module.exports = listFilteredFiles = async (dirName, ext) => {
+	try {
+		const files = await fs.promises.readdir(dirName);
+		const filteredFiles = files.filter(file => path.extname(file) === `.${ext}`);
+		return filteredFiles;
+	} catch (err) {
+		return err;
+	}
+} */

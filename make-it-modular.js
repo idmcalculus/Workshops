@@ -13,3 +13,17 @@ const callback = (err, files) => {
 }
 
 filteredFiles(folder, ext, callback);
+
+// same result as above, but using async/await
+/* const printFiles = async () => {
+	try {
+		const files = await filteredFiles(folder, ext);
+		for (const file of files) {
+			console.log(file);
+		}
+	} catch (err) {
+		return console.log(err);
+	}
+}
+
+printFiles(); */
